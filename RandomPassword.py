@@ -1,7 +1,10 @@
 import random
 characters = "+-/*!&$#?=@abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890▧"
-lenght = int(input("Cual es la longiud de la contraseña"))
+length = int(input("Cual es la longiud de la contraseña"))
 password = ""
-for i in range(lenght):
-    password += random.choice(characters)
-print(f"Tu contraseña es {password}")
+if length <= 5 and length >= 1:
+    print("Tu contraseña es demasiado corta")
+elif length > 5:
+    for i in range(length):
+        password += random.choice(characters)
+    print(f"Tu contraseña es {password}")
