@@ -44,4 +44,20 @@ async def add(ctx, left: float, right: float):
     """Adds two numbers together."""
     await ctx.send(left + right)
 
+@bot.command()
+async def operation(ctx, left: float, symbol: str, right: float):
+    """Adds two numbers together."""
+    if symbol == "+":
+        await ctx.send(left + right)
+    elif symbol == "-":
+        await ctx.send(left - right)
+    elif symbol == "*" or symbol == "x":
+        await ctx.send(left * right)
+    elif symbol == "/":
+        await ctx.send(left / right)
+    elif symbol == "%":
+        await ctx.send(left % right)
+    else:
+        await ctx.send("Invalid symbol")
+
 bot.run("Token")
